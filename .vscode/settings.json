@@ -1,0 +1,10 @@
+{
+    "files.exclude": {
+        "**/.vscode": true,
+        "**/fonts": true,
+        "**/parts": true,
+        "**/SiteTemplate": true
+    },
+    "appService.defaultWebAppToDeploy": "/subscriptions/500e6bd9-e1e5-4610-bc07-e7dd1a45717d/resourceGroups/Web/providers/Microsoft.Web/sites/Q7JS",
+    "appService.deploySubpath": "app\\client"
+}

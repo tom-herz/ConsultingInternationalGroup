@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Venus - Documentation</title>
+		<meta name="keywords" content="HTML5 Template" />
+		<meta name="description" content="Venus - Responsive HTML5 Template - Documentation">
+		<meta name="author" content="wephisto.ro">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- Fonts  -->
+		<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet" type="text/css">
+
+		<!-- CSS -->
+		<link rel="stylesheet" href="assets/styles/bootstrap.min.css">
+		<link rel="stylesheet" href="assets/styles/font-awesome.css">
+		<link rel="stylesheet" href="assets/styles/style.css">
+	</head>
+	<body data-spy="scroll" data-target=".nav-docs" data-offset="50">
+		<header>
+			<nav class="navbar navbar-default navbar-fixed-top">
+				<div class="container-full">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<div class="top">
+							<ul>
+								<li>
+									<img class="logo" src="assets/images/logo.png" alt="Porto">
+								</li>
+								<li>
+									<span>Version: <strong class="version">1.0</strong></span>
+								</li>
+								<li class="hidden-xs">
+									<span>Created: <strong><i class="fa fa-calendar"></i> 31/10/2016</strong></span>
+								</li>
+								<!--
+								<li class="hidden-xs">
+									<span>Latest Update: <strong><i class="fa fa-calendar"></i> 31/10/2016</strong></span>
+								</li>
+								-->
+							</ul>
+						</div>
+					</div>
+					<div id="navbar" class="navbar-collapse collapse">
+						<ul class="nav navbar-nav navbar-right">
+							<li><a target="_blank" href="http://wephisto.ro/">Contact Us</a></li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</header>
+
+		<aside id="sidebar" class="sidebar">
+			<div class="nav-docs">
+				<ul class="nav nav-pills nav-stacked">
+					<li><a href="#files_structure">Files Structure</a></li>
+					<li><a href="#javascript">Javascript</a></li>
+					<li><a href="#html_structure">HTML Structure</a></li>
+					<li><a href="#css_structure">CSS Structure</a></li>
+					<li><a href="#less_structure">LESS Structure</a></li>
+					<li><a href="#font">Font</a></li>
+					<li><a href="#social_media_icons">Social Media - Icons</a></li>
+					<li><a href="#icons">Icons</a></li>
+					<li><a href="#lightbox">Featherlight</a></li>
+					<li><a href="#effects">Effects</a></li>
+					<li><a href="#source_credits">Source &amp; Credits</a></li>
+				</ul>
+			</div>
+		</aside>
+		<div id="main" class="main">
+
+			<section id="files_structure">
+				<h2>Files Structure</h2>
+				<ul>
+					<li><code>/HTML</code>
+						<ul>
+							<li>
+								<code>/assets</code>
+								<ul>
+									<li>
+										<code>/fonts</code>
+										<ul>
+											<li><code>/font-awesome</code></li>
+											<li><code>/glyphicons</code></li>
+											<li><code>/merriweather</code></li>
+											<li><code>/RammettoOne</code></li>
+											<li><code>/visby</code></li>
+										</ul>
+									</li>
+									<li><code>/images</code> (All Images)</li>
+									<li>
+										<code>/scripts</code> (All Scripts)
+										<ul>
+											<li><code>/owl-carousel</code></li>
+											<li><code>/portfolio</code></li>
+											<li><code>/story-tale</code></li>
+											<li><code>/...</code></li>
+										</ul>
+									</li>
+									<li><code>/style</code> (Template CSS)</li>
+									<li><code>/style-development</code> (Template LESS)</li>
+								</ul>
+							</li>
+							<li>
+								<code>/parts</code>
+								<ul>
+									<li><code>/...</code> (Sections that you can add on your template)</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+
+			<section id="javascript">
+				<h2>Javascript</h2>
+
+				<p>It's possible to change the JS settings by extending the defaults from the template, that way is so much easier to update the theme changing only one JS file.<br>Here are a few samples on how to do that:</p><br>
+
+				<h4>Changing Navbar Colleapse</h4>
+
+
+				TO (HTML):
+				<pre>&lt;div class=&quot;collapse navbar-collapse&quot;&gt;</pre>
+
+				(Javascript):
+				<pre>$('.collapse').not(".navbar-collapse").collapse();</pre>
+
+				<br><br>
+
+				<h4>Manually Initializing a Plugin</h4>
+				Some of the plugins/elements are initialized automatically, if you want to disabled that and call the plugin via Javascript, follow these steps:
+
+				<br><br>FROM (HTML):
+
+<pre>&lt;div class=&quot;owl-carousel&quot; data-plugin-options=&#39;{&quot;items&quot;: 6, &quot;singleItem&quot;: false, &quot;autoPlay&quot;: true}&#39;&gt;</pre>
+
+				TO (HTML):
+
+<pre>&lt;div class=&quot;owl-carousel manual&quot; id=&quot;owl-example&quot;&gt;</pre>
+
+				(Javascript):
+<pre>
+$("#gallery").owlCarousel({
+ items : 4,
+ itemsDesktop : [1199,3],
+ itemsDesktopSmall : [979,3]
+});
+</pre>
+
+			</section>
+
+			<section id="html_structure">
+				<h2>HTML Structure</h2>
+				<p>The template is based on <strong>Bootstrap 3</strong> Framework - <a href="http://getbootstrap.com">http://getbootstrap.com</a></p>
+				<p>Bootstrap includes a responsive, mobile first fluid grid system that appropriately scales up to 12 columns as the device or viewport size increases.</p>
+				<br><br>
+				<pre>
+&lt;div class=&quot;row&quot;&gt;
+	&lt;div class=&quot;col-md-12&quot;&gt;
+		Level 1 column
+		&lt;div class=&quot;row&quot;&gt;
+			&lt;div class=&quot;col-md-6&quot;&gt;Level 2&lt;/div&gt;
+			&lt;div class=&quot;col-md-6&quot;&gt;Level 2&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+				<br>
+<pre>
+!--========== START COMPONENT FOOTER ==========--
+  &lt;div class="component-footer"&gt;
+
+  &lt;/div&gt;
+!--========== END COMPONENT FOOTER ==========--
+</pre>
+<br>
+<p>If you need more information, please visit this site: <a href="http://getbootstrap.com/css/#grid">http://getbootstrap.com/css/#grid</a></p>
+
+			</section>
+
+			<section id="css_structure">
+				<h2>CSS Structure</h2>
+				<p>The organization of the CSS is one of our priorities.</p>
+				<p>These are the CSS file we're using in the template:</p><br>
+				<ul>
+					<li><code>bootstrap.min.css</code> (Bootstrap styles)</li>
+					<li><code>font-awesome.css</code> (Font Awesome)</li>
+					<li><code>hint.css</code> (Tooltip styles)</li>
+					<li><code>animate.css</code> (CSS Animations)</li>
+					<li><code>story-zen.css</code> (CSS Animations)</li>
+					<li><code>style.css</code> (All styles)</li>
+				</ul>
+			</section>
+
+			<section id="less_structure">
+				<h2>LESS Structure</h2>
+				<p>These are the LESS file we're using in the template:</p><br>
+				<ul>
+					<li>
+						<code>style.less</code>
+						<ul>
+							<li><code>bootstrap.min.css</code></li>
+							<li><code>font-awesome.css</code></li>
+							<li><code>hint.css</code></li>
+							<li><code>animate.css</code></li>
+							<li><code>story-zen.css</code></li>
+							<li><code>settings.less</code></li>
+							<li><code>general.less</code></li>
+							<li><code>framework-theme.less</code></li>
+							<li><code>_blog-title</code></li>
+							<li><code>_blog-post.less</code></li>
+							<li><code>_blog-post-slider</code></li>
+							<li><code>_blog-post-image</code></li>
+							<li><code>_blog-post-video-1</code></li>
+							<li><code>_blog-post-video-2</code></li>
+							<li><code>_blog-post-text</code></li>
+							<li><code>_blog-post-quote</code></li>
+							<li><code>_widgets</code></li>
+							<li><code>_portfolio.less</code></li>
+							<li><code>_element-alert-boxes.less</code></li>
+							<li><code>_element-accordions.less</code></li>
+							<li><code>_element-tabs.less</code></li>
+							<li><code>_element-blockquote.less</code></li>
+							<li><code>_element-social-icons.less</code></li>
+							<li><code>_subscription.less</code></li>
+							<li><code>_typography-heading.less</code></li>
+							<li><code>_element-list-items</code></li>
+							<li><code>_skills-bar.less</code></li>
+							<li><code>_element-buttons.less</code></li>
+							<li><code>_milestone-counters-1.less</code></li>
+							<li><code>_milestone-counters-2.less</code></li>
+							<li><code>_boxes-style-1.less</code></li>
+							<li><code>_boxes-style-2.less</code></li>
+							<li><code>_boxes-style-3.less</code></li>
+							<li><code>_recent-posts.less</code></li>
+							<li><code>_separator-achievements.less</code></li>
+							<li><code>_contact-email-and-map.less</code></li>
+							<li><code>_price-table.less</code></li>
+							<li><code>_price-table-2.less</code></li>
+							<li><code>_separator-notification.less</code></li>
+							<li><code>_our_clients_row.less</code></li>
+							<li><code>_separator-quotation.less</code></li>
+							<li><code>_our-team-row.less</code></li>
+							<li><code>_separator-progress.less</code></li>
+							<li><code>_featured-works.less</code></li>
+							<li><code>_why-choose.less</code></li>
+							<li><code>_about-devices.less</code></li>
+							<li><code>_navigation.less</code></li>
+							<li><code>_slider.less</code></li>
+							<li><code>_footer.less</code></li>
+							<li><code>_footer-bar.less</code></li>
+							<li><code>media-query.less</code></li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+
+			<section id="font">
+				<h2>Font</h2>
+				<br>
+				<p> To change the embedded font, please take a look in the head part of the website and you will find this tag:
+				</p>
+<pre>
+@font-face {
+  font-family: 'Merriweather';
+  src: url('../fonts/merriweather/Merriweather-Bold.eot');
+  src: url('../fonts/merriweather/Merriweather-Bold.eot?#iefix') format('embedded-opentype'), url('../fonts/merriweather/Merriweather-Bold.woff') format('woff'), url('../fonts/merriweather/Merriweather-Bold.ttf') format('truetype'), url('../fonts/merriweather/Merriweather-Bold.svg#FrancophilSansRegular') format('svg');
+  font-weight: 800;
+}
+@font-face {
+  font-family: 'MerriweatherSans';
+  src: url('../fonts/merriweather/MerriweatherSans-Light.eot');
+  src: url('../fonts/merriweather/MerriweatherSans-Light.eot?#iefix') format('embedded-opentype'), url('../fonts/merriweather/MerriweatherSans-Light.woff') format('woff'), url('../fonts/merriweather/MerriweatherSans-Light.ttf') format('truetype'), url('../fonts/merriweather/MerriweatherSans-Light.svg#FrancophilSansRegular') format('svg');
+  font-weight: 700;
+}
+@font-face {
+  font-family: Visby;
+  src: url(../fonts/visby/VisbyCF-HeavyOblique.otf);
+  font-weight: 900;
+}
+@font-face {
+  font-family: Visby;
+  src: url(../fonts/visby/VisbyCF-Heavy.otf);
+  font-weight: 900;
+}
+@font-face {
+  font-family: Visby;
+  src: url(../fonts/visby/VisbyCF-ExtraBoldOblique.otf);
+  font-weight: 800;
+}
+@font-face {
+  font-family: Visby;
+  src: url(../fonts/visby/VisbyCF-ExtraBold.otf);
+  font-weight: 800;
+}
+@font-face {
+  font-family: Visby;
+  src: url(../fonts/visby/VisbyCF-BoldOblique.otf);
+  font-weight: 700;
+}
+@font-face {
+  font-family: Visby;
+  src: url(../fonts/visby/VisbyCF-Bold.otf);
+  font-weight: 700;
+}
+@font-face {
+  font-family: Visby;
+  src: url(../fonts/visby/VisbyCF-DemiBoldOblique.otf);
+  font-weight: 600;
+}
+@font-face {
+  font-family: Visby;
+  src: url(../fonts/visby/VisbyCF-DemiBold.otf);
+  font-weight: 600;
+}
+@font-face {
+  font-family: Visby;
+  src: url(../fonts/visby/VisbyCF-MediumOblique.otf);
+  font-weight: 500;
+}
+@font-face {
+  font-family: Visby;
+  src: url(../fonts/visby/VisbyCF-Medium.otf);
+  font-weight: 500;
+}
+@font-face {
+  font-family: Visby;
+  src: url(../fonts/visby/VisbyCF-RegularOblique.otf);
+  font-weight: 400;
+}
+@font-face {
+  font-family: Visby;
+  src: url(../fonts/visby/VisbyCF-Regular.otf);
+  font-weight: 400;
+}
+@font-face {
+  font-family: Visby;
+  src: url(../fonts/visby/VisbyCF-LightOblique.otf);
+  font-weight: 300;
+}
+@font-face {
+  font-family: Visby;
+  src: url(../fonts/visby/VisbyCF-Light.otf);
+  font-weight: 300;
+}
+@font-face {
+  font-family: Visby;
+  src: url(../fonts/visby/VisbyCF-ThinOblique.otf);
+  font-weight: 100;
+}
+@font-face {
+  font-family: Visby;
+  src: url(../fonts/visby/VisbyCF-Thin.otf);
+  font-weight: 100;
+}
+</pre>
+				<br>
+				Or, if to change the font, first go to http://www.google.com/webfonts choose a font and use the generated code.
+				<br>
+
+			</section>
+
+			<section id="social_media_icons">
+				<h2>Social Media - Icons</h2>
+				<p>Here's the css classes of the available social media icons in the template:</p>
+				<ul>
+					<li>
+						digg</li>
+					<li>
+						dribbble</li>
+					<li>
+						facebook</li>
+					<li>
+						flickr</li>
+					<li>
+						forrst</li>
+					<li>
+						googleplus</li>
+					<li>
+						html5</li>
+					<li>
+						icloud</li>
+					<li>
+						lastfm</li>
+					<li>
+						linkedin</li>
+					<li>
+						myspace</li>
+					<li>
+						paypal</li>
+					<li>
+						picasa</li>
+					<li>
+						pinterest</li>
+					<li>
+						reddit</li>
+					<li>
+						rss</li>
+					<li>
+						skype</li>
+					<li>
+						stumbleupon</li>
+					<li>
+						tumblr</li>
+					<li>
+						twitter</li>
+					<li>
+						vimeo</li>
+					<li>
+						wordpress</li>
+					<li>
+						yahoo</li>
+					<li>
+						youtube</li>
+				</ul>
+			</section>
+
+			<section id="icons">
+				<h2>Icons</h2>
+				<p><strong>Font Awesome</strong> is a @font-face iconset that you can change sizehttp and color of the icons using CSS.<br><br>
+					If you need more information, please visit this site: <a href="http://fontawesome.io/icons/">hhttp://fontawesome.io/icons/</a>
+				</p>
+<pre>
+&lt;i class=&quot;fa fa-edit&quot;&gt;&lt;/i&gt;
+&lt;i class=&quot;fa fa-search&quot;&gt;&lt;/i&gt;
+...
+</pre>
+			</section>
+
+
+
+			<section id="lightbox">
+				<h2>Featherlight</h2>
+<br><strong>Here's an example of usage:</strong></p>
+
+<pre>
+&lt;a href=&quot;assets/image/portfolio-image-1.jpg&quot; data-featherlight=&quot;image&quot;&gt;
+	&lt;img class=&quot;img-responsive&quot; src=&quot;assets/image/portfolio-image-1.jpg&quot;&gt;
+&lt;/a&gt;
+</pre>
+
+				<p>For more information check the <a target="_blank" href="https://github.com/noelboss/featherlight/#featherlight-gallery">documentation</a>.</p>
+			</section>
+
+			<section id="effects">
+				<h2>Effects</h2>
+				<p>You can add some Animations / Transitions to the elements which fires when an element scrolls into view, it's pretty simple to use and you can add it in any element.<br>
+					&nbsp</p>
+
+				<p><b>data-story-tale-item</b>	This is used for marking a text zone, this is used for Stricly TEXT Only, to achieve an awesome Text Story Display</p>
+				<p><b>data-story-tale-container</b>	This is used for marking a block zone. This can be used anywhere.</p>
+				<p><strong>Usage:</strong></p>
+
+<pre>
+&lt;div data-story-tale="rotateIn,rotateInDownLeft,rotateInDownRight,rotateInUpLeft,rotateInUpRight"&gt;
+...
+&lt;/div&gt;
+</pre>
+
+				<br><p>Heads up: The Attribute <strong>data-appear-animation-delay</strong> is <strong>Optional </strong>and is set in <strong>Miliseconds</strong>.</p>
+				<p>The animation can be set to:</p>
+				<br>
+				<ul>
+					<li>rotateIn</li>
+					<li>rotateInDownLeft</li>
+					<li>rotateInDownRight</li>
+					<li>rotateInUpLeft</li>
+					<li>rotateInUpRight</li>
+					<li>fadeInUp</li>
+					<li>fadeInRight</li>
+					<li>fadeInDown</li>
+					<li>fadeInLeft</li>
+					<li>fadeInUpBig</li>
+					<li>fadeInRightBig</li>
+					<li>fadeInDownBig</li>
+					<li>fadeInLeftBig</li>
+					<li>bounceInUp</li>
+					<li>bounceInRight</li>
+					<li>bounceInDown</li>
+					<li>bounceInLeft</li>
+					<li>flipInX</li>
+					<li>flipInY</li>
+					<li>rotateIn</li>
+					<li>rotateInDownLeft</li>
+					<li>rotateInDownRight</li>
+					<li>rotateInUpLeft</li>
+					<li>rotateInUpRight</li>
+				</ul>
+			</section>
+
+			<section id="source_credits">
+				<h2>Source &amp; Credits</h2><br>
+				<ul>
+					<li>
+						<strong>Fonts:</strong>
+						<ul>
+							<li>Google Fonts - <a href="http://www.google.com/webfonts" target="_blank">http://www.google.com/webfonts</a></li>
+							<li>Icons Font-face - <a href="http://fontawesome.io/<br><br>" target="_blank">http://fontawesome.io/<br><br></a></li>
+						</ul>
+					</li>
+					<li>
+						<strong>Scripts:</strong>
+						<ul>
+							<li>jQuery - <a href="http://www.jquery.com/" target="_blank">http://www.jquery.com/</a></li>
+							<li>Bootstrap 3 - <a href="http://getbootstrap.com/" target="_blank">http://getbootstrap.com/</a></li>
+							<li>Isotope Jquery plugin - <a href="http://isotope.metafizzy.co" target="_blank">http://isotope.metafizzy.co</a></li>
+							<li>Modernizr - <a href="http://modernizr.com/" target="_blank">http://modernizr.com/</a></li>
+							<li>Owl Carousel - <a href="http://www.owlgraphic.com/owlcarousel2/" target="_blank">http://www.owlgraphic.com/owlcarousel2/</a></li>
+							<li>Featherlight- <a href="http://noelboss.github.io/featherlight/" target="_blank">http://noelboss.github.io/featherlight/</a></li>
+							<li>Spsimple Portfolio- <a href="https://www.joomshaper.com/joomla-extensions/sp-simple-portfolio" target="_blank">https://www.joomshaper.com/joomla-extensions/sp-simple-portfolio</a></li>
+							<li>Story Tale- <a href="https://github.com/easy-development/jquery-story-tale" target="_blank">https://github.com/easy-development/jquery-story-tale</a></li>
+							<li>jQuery Knob- <a href="http://anthonyterrien.com/knob/" target="_blank">http://anthonyterrien.com/knob/</a></li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+
+			<!--<section id="changelog">
+				<h2>Changelog</h2>
+				<a target="_blank" href="#">View Changelog</a>
+			</section>-->
+		</div>
+
+		<script src="assets/scripts/jquery.js"></script>
+		<script src="assets/scripts/bootstrap.min.js"></script>
+		<script src="assets/scripts/docs.js"></script>
+	</body>
+</html>
